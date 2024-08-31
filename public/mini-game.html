@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./src/output.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Calistoga&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    * {
+      font-family: "Calistoga", serif;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-800">
+
+  <div style="display: none;" id="bg-score"
+    class=" justify-start w-fit items-center gap-1 text-md md:text-2xl mx-auto m-2 md:m-5  p-3 border-[4px] border-[#fb923c80] rounded-xl">
+    <span class="inline-block text-orange-300">Score</span>
+
+    <p class="text-white">:</p>
+    <span id="score" class="inline-block text-orange-400 font-medium translate-y-0.5">
+      0
+    </span>
+
+  </div>
+  <div id="bg-start" class="text-center mt-20">
+    <button id="btn-start" class="text-gray-50 border-2 border-orange-300 p-3 rounded  font-medium">Start Game</button>
+    <p class="text-white w-[300px] md:w-[580px] mx-auto mt-10 p-2 border rounded-lg"><span
+        class="text-2xl text-amber-50">Description</span><br>
+      Hello, my name is Alireza. I hope you hit the start button and go to the game I made and test it. I wrote this
+      game with JavaScript and used the math library and it was my taste. I want to use it as a portfolio. Thanks.
+    </p>
+    <p class="text-white w-[300px] md:w-[580px] mx-auto mt-5 p-2 border rounded-lg"><span
+        class="text-2xl text-amber-50">How to play</span><br>
+      This is a game of chance. If the number you pick is the same as the number picked by the system, you'll simply get
+      ten points.
+    </p>
+  </div>
+  <section style="display: none;" id="bg-game" class=" justify-center flex-col items-center ">
+    <div class="grid grid-cols-3 [&>div]:h-[100px] gap-1 w-[320px] [&>div]:flex [&>div]:justify-center
+         [&>div]:items-center [&>div]:cursor-pointer  text-xl font-medium text-zinc-700 mt-3">
+      <div id="box-1" class="box bg-gray-100 hover:bg-white/80 active:scale-95 transition-all select-none">1</div>
+      <div id="box-2" class="box bg-gray-100 hover:bg-white/80 active:scale-95 transition-all select-none">2</div>
+      <div id="box-3" class="box bg-gray-100 hover:bg-white/80 active:scale-95 transition-all select-none">3</div>
+      <div id="box-4" class="box bg-gray-100 hover:bg-white/80 active:scale-95 transition-all select-none">4</div>
+      <div id="box-5" class="box bg-gray-100 hover:bg-white/80 active:scale-95 transition-all select-none">5</div>
+      <div id="box-6" class="box bg-gray-100 hover:bg-white/80 active:scale-95 transition-all select-none">6</div>
+      <div id="box-7" class="box bg-gray-100 hover:bg-white/80 active:scale-95 transition-all select-none">7</div>
+      <div id="box-8" class="box bg-gray-100 hover:bg-white/80 active:scale-95 transition-all select-none">8</div>
+      <div id="box-9" class="box bg-gray-100 hover:bg-white/80 active:scale-95 transition-all select-none">9</div>
+    </div>
+    <div class="flex items-center gap-x-2 ">
+      <p id="chose-number" class='text-white font-bold text-7xl mt-3 flex items-center gap-x-2'></p>
+      <p id="random-number" class='text-white font-bold text-7xl mt-3 flex items-center gap-x-2 '></p>
+    </div>
+    <span style="display: none;" id="resultFalse" class=" justify-center items-center gap-1 text-lg mt-2 text-red-400 ">
+      <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+        stroke="currentColor" class="size-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+      </svg>
+      Try again
+    </span>
+    <span style="display: none;" id="resultTrue" class=" justify-center items-center gap-1 text-lg mt-2 text-green-400">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+        class="size-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+      </svg>
+
+      You succeeded
+    </span>
+    <a href="" style="display: none;" class="p-3 bg-amber-300 mt-2 rounded-sm text-amber-950" id="reset-game">Restart
+      Game</a>
+  </section>
+
+
+  <script src="./js/mini-game.js"></script>
+</body>
+
+</html>
